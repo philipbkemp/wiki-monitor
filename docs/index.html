@@ -291,7 +291,7 @@
      * Opens Chrome's file picker and lets you select
      * the JSON file for the requested club.
      */
-    async function loadClub(club) {
+    async function loadClubDebug(club) {
 
         const input = document.createElement("input");
 
@@ -340,15 +340,15 @@
      * This is the version to use once the site
      * is running on GitHub Pages.
      */
-    async function loadClub2(club) {
+    async function loadClub(club) {
 
         const response = await fetch(
-            `data/${club}.json`
+            `squads/${club}.json`
         );
 
         if (!response.ok) {
             throw new Error(
-                `Could not load data/${club}.json`
+                `Could not load squads/${club}.json`
             );
         }
 
