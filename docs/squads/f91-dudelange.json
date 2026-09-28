@@ -3,8 +3,8 @@
   "url": "https://www.f91.lu/kader-90630v4",
   "redirectUrl": "https://www.f91.lu/kader-90630v4/groups/50/seasons/220",
   "actualUrl": "https://www.f91.lu/kader-90630v4/groups/50/seasons/220",
-  "lastChecked": "2026-09-28T11:47:29.184Z",
-  "status": "UPDATED",
+  "lastChecked": "2026-09-28T12:47:17.315Z",
+  "status": "OKAY",
   "selectors": {
     "player": "a > [data-mod='roster']",
     "name": "h4",
