@@ -1,0 +1,14 @@
+{
+    "name": "Wiki Monitor",
+    "version": "0.1",
+    "private": true,
+    "scripts": {
+        "monitor": "playwright test monitoring",
+        "monitor:f91": "playwright test monitoring/clubs/f91-dudelange.spec.ts"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.55.0",
+        "@types/node": "^24.0.0",
+        "typescript": "^5.0.0"
+    }
+}

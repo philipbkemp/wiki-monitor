@@ -1,0 +1,230 @@
+{
+  "club": "F91 Dudelange",
+  "url": "https://www.f91.lu/kader-90630v4",
+  "redirectUrl": "https://www.f91.lu/kader-90630v4/groups/50/seasons/220",
+  "actualUrl": "https://www.f91.lu/kader-90630v4/groups/50/seasons/220",
+  "lastChecked": "2026-09-28T11:47:29.184Z",
+  "status": "UPDATED",
+  "selectors": {
+    "player": "a > [data-mod='roster']",
+    "name": "h4",
+    "number": "h3",
+    "position": "p"
+  },
+  "knownPlayers": [
+    {
+      "name": "Mirza Rasiti",
+      "position": "Defense",
+      "number": "3"
+    },
+    {
+      "name": "Rodrigo Goncalves Tavares",
+      "position": "Defense",
+      "number": "4"
+    },
+    {
+      "name": "Joris Belgacem",
+      "position": "Midfield",
+      "number": "5"
+    },
+    {
+      "name": "Felix Göttlicher",
+      "position": "Defense"
+    },
+    {
+      "name": "Gédéon Dimbu Nsiala",
+      "position": "Defense"
+    },
+    {
+      "name": "Dylan Magalhaes Lucas",
+      "position": "Defense",
+      "number": "2"
+    },
+    {
+      "name": "Ivan Englaro",
+      "position": "Midfield",
+      "number": "6"
+    },
+    {
+      "name": "Igor Teles Santos",
+      "position": "Outside forward",
+      "number": "7"
+    },
+    {
+      "name": "Diogo Monteiro De Oliveira",
+      "position": "Midfield",
+      "number": "8"
+    },
+    {
+      "name": "Herman Moussaki",
+      "position": "Striker",
+      "number": "9"
+    },
+    {
+      "name": "Belmin Muratovic",
+      "position": "Midfield",
+      "number": "10"
+    },
+    {
+      "name": "Redouane Boulbrachène",
+      "position": "Outside forward",
+      "number": "11"
+    },
+    {
+      "name": "Conrad Azong",
+      "position": "Striker",
+      "number": "12"
+    },
+    {
+      "name": "Bruno Correia Mendes Ramirez",
+      "position": "Striker",
+      "number": "14"
+    },
+    {
+      "name": "Eldin Latik",
+      "position": "Goalkeeper",
+      "number": "16"
+    },
+    {
+      "name": "Martim Elmano Mendes Marcelino",
+      "position": "Outside forward",
+      "number": "17"
+    },
+    {
+      "name": "Vin Schmit",
+      "position": "Player",
+      "number": "18"
+    },
+    {
+      "name": "Valentino Tallarico",
+      "position": "Defense",
+      "number": "20"
+    },
+    {
+      "name": "Samuel Sansiviero Almeida",
+      "position": "Midfield",
+      "number": "21"
+    },
+    {
+      "name": "Charles Morren",
+      "position": "Midfield",
+      "number": "22"
+    },
+    {
+      "name": "Isaque Gavioli",
+      "position": "Defense",
+      "number": "23"
+    },
+    {
+      "name": "Dzenis Novalic",
+      "position": "Goalkeeper",
+      "number": "25"
+    },
+    {
+      "name": "Leny Tela",
+      "position": "Defense",
+      "number": "27"
+    },
+    {
+      "name": "Chris Stumpf",
+      "position": "Defense"
+    },
+    {
+      "name": "Wilson Kamavuaka",
+      "position": "Defense",
+      "number": "36"
+    },
+    {
+      "name": "Leandro Da Silva Matos",
+      "position": "Defender",
+      "number": "37"
+    },
+    {
+      "name": "Hanibal Solomon",
+      "position": "Outside forward",
+      "number": "66"
+    },
+    {
+      "name": "Enzo Esposito",
+      "position": "Goalkeeper",
+      "number": "77"
+    },
+    {
+      "name": "Alexis Rigoulot",
+      "position": "Physiotherapist"
+    },
+    {
+      "name": "Ismaël Dumont",
+      "position": "Assistant Coach"
+    },
+    {
+      "name": "Hugo Bove",
+      "position": "Physiotherapist"
+    },
+    {
+      "name": "Ralph Birchem",
+      "position": "Assistant"
+    },
+    {
+      "name": "Rodrigue Dikaba",
+      "position": "Assistant Coach"
+    },
+    {
+      "name": "Claudio Englaro",
+      "position": "Goalkeeper Coach"
+    },
+    {
+      "name": "Manuel Severino Santos",
+      "position": "Assistant"
+    },
+    {
+      "name": "Claudio Lombardelli",
+      "position": "Head Coach"
+    },
+    {
+      "name": "Dylan Ferreira",
+      "position": "Assistant"
+    },
+    {
+      "name": "Valentin Bove",
+      "position": "Physiotherapist"
+    },
+    {
+      "name": "Valentin Bovent",
+      "position": "Physiotherapist"
+    }
+  ],
+  "newPlayers": [
+    {
+      "name": "Enzo Fonseca Lima",
+      "position": "Outside forward",
+      "number": "38"
+    }
+  ],
+  "departedPlayers": [
+    {
+      "name": "Valentin Bovent",
+      "position": "Physiotherapist"
+    }
+  ],
+  "changedPlayers": [
+    {
+      "name": "Chris Stumpf",
+      "changes": {
+        "number": {
+          "old": null,
+          "new": "33"
+        }
+      }
+    },
+    {
+      "name": "Leandro Da Silva Matos",
+      "changes": {
+        "position": {
+          "old": "Defender",
+          "new": "Striker"
+        }
+      }
+    }
+  ]
+}

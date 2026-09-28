@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Squad Monitor</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin: 0 0 30px;
+            font-size: 28px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        th,
+        td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #eee;
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 7px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .pass {
+            background: #d9f2df;
+            color: #176b2c;
+        }
+
+        .fail {
+            background: #f8d7da;
+            color: #9b1c1c;
+            cursor: pointer;
+        }
+
+        .fail:hover {
+            background: #f3c5c9;
+        }
+
+        .migration {
+            background: #fff0c2;
+            color: #795600;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .spinner {
+            width: 36px;
+            height: 36px;
+            margin: 0 auto 15px;
+            border: 4px solid #ddd;
+            border-top-color: #555;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .error {
+            padding: 15px;
+            margin-top: 20px;
+            background: #f8d7da;
+            color: #721c24;
+            border-radius: 5px;
+        }
+
+        /* Modal */
+
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 1000;
+        }
+
+        .modal-backdrop.visible {
+            display: flex;
+        }
+
+        .modal {
+            width: 100%;
+            max-width: 550px;
+            max-height: 80vh;
+            overflow-y: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .close-button {
+            border: none;
+            background: none;
+            font-size: 26px;
+            line-height: 1;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .close-button:hover {
+            color: #000;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .change-section {
+            margin-bottom: 22px;
+        }
+
+        .change-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .change-section h3 {
+            margin: 0 0 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .change-section ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .change-section li {
+            margin-bottom: 7px;
+        }
+
+        .new h3 {
+            color: #176b2c;
+        }
+
+        .departed h3 {
+            color: #9b1c1c;
+        }
+
+        .changed h3 {
+            color: #795600;
+        }
+
+        .change-detail {
+            margin-top: 3px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        .no-changes {
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            th,
+            td {
+                padding: 11px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Squad Monitor</h1>
+
+    <div id="content">
+        <div class="loading">
+            <div class="spinner"></div>
+            <div>Loading squad data...</div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Change details modal -->
+
+<div
+    id="modal-backdrop"
+    class="modal-backdrop"
+>
+    <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+    >
+        <div class="modal-header">
+            <h2 id="modal-title">Squad Changes</h2>
+
+            <button
+                id="close-modal"
+                class="close-button"
+                aria-label="Close"
+            >
+                &times;
+            </button>
+        </div>
+
+        <div
+            id="modal-body"
+            class="modal-body"
+        ></div>
+    </div>
+</div>
+
+
+<script>
+
+    /*
+     * Clubs to display.
+     *
+     * Add another club here when you add its JSON file.
+     */
+    const clubs = [
+        "arsenal"
+    ];
+
+
+    /*
+     * LOCAL DEBUG VERSION
+     *
+     * Opens Chrome's file picker and lets you select
+     * the JSON file for the requested club.
+     */
+    async function loadClub(club) {
+
+        const input = document.createElement("input");
+
+        input.type = "file";
+        input.accept = ".json";
+
+        document.body.appendChild(input);
+
+        return new Promise((resolve, reject) => {
+
+            input.onchange = async () => {
+
+                const file = input.files?.[0];
+
+                input.remove();
+
+                if (!file) {
+                    reject(new Error("No file selected."));
+                    return;
+                }
+
+                try {
+                    const text = await file.text();
+
+                    resolve(JSON.parse(text));
+
+                } catch (error) {
+
+                    reject(error);
+
+                }
+            };
+
+            input.click();
+        });
+    }
+
+
+    /*
+     * DEPLOYED VERSION
+     *
+     * Reads the JSON file from:
+     *
+     * data/arsenal.json
+     *
+     * This is the version to use once the site
+     * is running on GitHub Pages.
+     */
+    async function loadClub2(club) {
+
+        const response = await fetch(
+            `data/${club}.json`
+        );
+
+        if (!response.ok) {
+            throw new Error(
+                `Could not load data/${club}.json`
+            );
+        }
+
+        return await response.json();
+    }
+
+
+    /*
+     * Escape text before inserting it into HTML.
+     */
+    function escapeHtml(value) {
+
+        return String(value)
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
+    }
+
+
+    /*
+     * Render one club row.
+     */
+    const clubData = new Map();
+
+    function renderClubRow(data) {
+
+    clubData.set(data.club, data);
+
+    let squadCell = "";
+
+    if (data.status === "OKAY") {
+
+        squadCell = `
+            <span class="status pass">
+                PASS
+            </span>
+        `;
+
+    } else if (data.status === "UPDATED") {
+
+        squadCell = `
+            <span
+                class="status fail"
+                data-club="${escapeHtml(data.club)}"
+            >
+                FAIL
+            </span>
+        `;
+
+    } else if (data.status === "MIGRATION") {
+
+        squadCell = `
+            <span class="status migration">
+                MIGRATION
+            </span>
+        `;
+
+    } else {
+
+        squadCell = `
+            <span class="status fail">
+                ERROR
+            </span>
+        `;
+    }
+
+    return `
+        <tr>
+            <td>
+                ${escapeHtml(data.club)}
+            </td>
+
+            <td>
+                ${squadCell}
+            </td>
+        </tr>
+    `;
+}
+
+
+    /*
+     * Render the complete table.
+     */
+function renderTable(results) {
+
+    const content =
+        document.getElementById("content");
+
+    clubData.clear();
+
+    let rows = "";
+
+    for (const result of results) {
+
+        if (result.error) {
+
+            rows += `
+                <tr>
+                    <td>
+                        ${escapeHtml(result.club)}
+                    </td>
+
+                    <td>
+                        <span class="status fail">
+                            ERROR
+                        </span>
+                    </td>
+                </tr>
+            `;
+
+        } else {
+
+            rows += renderClubRow(result.data);
+        }
+    }
+
+    content.innerHTML = `
+        <table>
+            <thead>
+                <tr>
+                    <th>Club</th>
+                    <th>Squad</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                ${rows}
+            </tbody>
+        </table>
+    `;
+
+    document
+        .querySelectorAll(".status.fail[data-club]")
+        .forEach(cell => {
+
+            cell.addEventListener("click", () => {
+
+                const club = cell.dataset.club;
+                const data = clubData.get(club);
+
+                if (data) {
+                    openChanges(data);
+                }
+            });
+        });
+}
+
+    /*
+     * Open the change-details modal.
+     */
+    function openChanges(data) {
+
+        document.getElementById("modal-title")
+            .textContent =
+            `${data.club} — Squad Changes`;
+
+        let html = "";
+
+
+        /*
+         * New players
+         */
+
+        if (
+            data.newPlayers &&
+            data.newPlayers.length > 0
+        ) {
+
+            html += `
+                <div class="change-section new">
+
+                    <h3>
+                        New Players
+                    </h3>
+
+                    <ul>
+            `;
+
+            for (const player of data.newPlayers) {
+
+                html += `
+                    <li>
+                        ${escapeHtml(player.name)}
+                    </li>
+                `;
+            }
+
+            html += `
+                    </ul>
+
+                </div>
+            `;
+        }
+
+
+        /*
+         * Departed players
+         */
+
+        if (
+            data.departedPlayers &&
+            data.departedPlayers.length > 0
+        ) {
+
+            html += `
+                <div class="change-section departed">
+
+                    <h3>
+                        Departed Players
+                    </h3>
+
+                    <ul>
+            `;
+
+            for (const player of data.departedPlayers) {
+
+                html += `
+                    <li>
+                        ${escapeHtml(player.name)}
+                    </li>
+                `;
+            }
+
+            html += `
+                    </ul>
+
+                </div>
+            `;
+        }
+
+
+        /*
+         * Changed players
+         */
+
+        if (
+            data.changedPlayers &&
+            data.changedPlayers.length > 0
+        ) {
+
+            html += `
+                <div class="change-section changed">
+
+                    <h3>
+                        Changed Players
+                    </h3>
+
+                    <ul>
+            `;
+
+            for (const player of data.changedPlayers) {
+
+                html += `
+                    <li>
+                        <strong>
+                            ${escapeHtml(player.name)}
+                        </strong>
+
+                        <div class="change-detail">
+                `;
+
+                if (player.changes.position) {
+
+                    html += `
+                        Position:
+                        ${escapeHtml(
+                            player.changes.position.old ?? "—"
+                        )}
+                        →
+                        ${escapeHtml(
+                            player.changes.position.new ?? "—"
+                        )}
+                        <br>
+                    `;
+                }
+
+                if (player.changes.number) {
+
+                    html += `
+                        Number:
+                        ${escapeHtml(
+                            player.changes.number.old ?? "—"
+                        )}
+                        →
+                        ${escapeHtml(
+                            player.changes.number.new ?? "—"
+                        )}
+                    `;
+                }
+
+                html += `
+                        </div>
+                    </li>
+                `;
+            }
+
+            html += `
+                    </ul>
+
+                </div>
+            `;
+        }
+
+
+        if (!html) {
+
+            html = `
+                <div class="no-changes">
+                    No squad changes detected.
+                </div>
+            `;
+        }
+
+
+        document.getElementById("modal-body")
+            .innerHTML = html;
+
+        document.getElementById("modal-backdrop")
+            .classList.add("visible");
+    }
+
+
+    /*
+     * Close modal.
+     */
+    function closeModal() {
+
+        document.getElementById("modal-backdrop")
+            .classList.remove("visible");
+    }
+
+
+    document
+        .getElementById("close-modal")
+        .addEventListener(
+            "click",
+            closeModal
+        );
+
+
+    /*
+     * Close when clicking outside the modal.
+     */
+    document
+        .getElementById("modal-backdrop")
+        .addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target ===
+                    document.getElementById(
+                        "modal-backdrop"
+                    )
+                ) {
+                    closeModal();
+                }
+            }
+        );
+
+
+    /*
+     * Close with Escape.
+     */
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        }
+    );
+
+
+    /*
+     * Load all clubs.
+     *
+     * LOCAL DEBUG:
+     *     loadClub(club)
+     *
+     * DEPLOYED:
+     *     loadClub2(club)
+     */
+    async function loadAllClubs() {
+
+        const results = [];
+
+        for (const club of clubs) {
+
+            try {
+
+                /*
+                 * Change this manually when deploying:
+                 *
+                 * loadClub(club)
+                 *
+                 * -> local debug
+                 *
+                 * loadClub2(club)
+                 *
+                 * -> deployed site
+                 */
+
+                const data =
+                    await loadClub(club);
+
+                results.push({
+                    club,
+                    data
+                });
+
+            } catch (error) {
+
+                results.push({
+                    club,
+                    error: error instanceof Error
+                        ? error.message
+                        : String(error)
+                });
+            }
+        }
+
+        renderTable(results);
+    }
+
+
+    /*
+     * Start.
+     */
+    loadAllClubs();
+
+</script>
+
+</body>
+</html>
