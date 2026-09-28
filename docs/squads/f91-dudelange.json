@@ -127,7 +127,8 @@
     },
     {
       "name": "Chris Stumpf",
-      "position": "Defense"
+      "position": "Defense",
+      "number": "33"
     },
     {
       "name": "Wilson Kamavuaka",
@@ -136,7 +137,7 @@
     },
     {
       "name": "Leandro Da Silva Matos",
-      "position": "Defender",
+      "position": "Striker",
       "number": "37"
     },
     {
@@ -190,41 +191,12 @@
       "position": "Physiotherapist"
     },
     {
-      "name": "Valentin Bovent",
-      "position": "Physiotherapist"
-    }
-  ],
-  "newPlayers": [
-    {
       "name": "Enzo Fonseca Lima",
       "position": "Outside forward",
       "number": "38"
     }
   ],
-  "departedPlayers": [
-    {
-      "name": "Valentin Bovent",
-      "position": "Physiotherapist"
-    }
-  ],
-  "changedPlayers": [
-    {
-      "name": "Chris Stumpf",
-      "changes": {
-        "number": {
-          "old": null,
-          "new": "33"
-        }
-      }
-    },
-    {
-      "name": "Leandro Da Silva Matos",
-      "changes": {
-        "position": {
-          "old": "Defender",
-          "new": "Striker"
-        }
-      }
-    }
-  ]
+  "newPlayers": [],
+  "departedPlayers": [],
+  "changedPlayers": []
 }
