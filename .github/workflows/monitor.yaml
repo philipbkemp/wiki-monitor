@@ -1,4 +1,4 @@
-name: Monitor football squads
+name: Monitoring
 
 on:
   schedule:
