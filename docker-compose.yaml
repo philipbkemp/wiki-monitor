@@ -1,0 +1,25 @@
+services:
+
+  wikimonitor_web:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "9331:9331"
+    volumes:
+      - ./docs:/usr/share/nginx/html
+
+  wikimonitor_sass:
+    image: node:20-alpine
+    working_dir: /workspace
+    volumes:
+      - ./docs:/workspace
+    command: sh -c "npm install -g sass && sass --watch assets/scss:assets/css --no-source-map --style=compressed --poll"
+
+  wikimonitor_js:
+    image: node:20-alpine
+    working_dir: /workspace
+    volumes:
+      - ./docs:/workspace
+      - ./docker/minify-js.sh:/minify-js.sh
+    command: sh /minify-js.sh
