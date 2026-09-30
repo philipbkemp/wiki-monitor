@@ -1,5 +1,6 @@
 const clubs = [
-    "f91-dudelange"
+    "f91-dudelange",
+    "fc-residence-walferdange"
 ];
 
 const clubData = new Map();

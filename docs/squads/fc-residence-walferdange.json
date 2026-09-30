@@ -1,0 +1,158 @@
+{
+  "club": "Résidence Walferdange",
+  "url": "https://www.fcresidence.lu/seniors-370553v4",
+  "actualUrl": "https://www.fcresidence.lu/seniors-370553v4",
+  "lastChecked": "2026-09-30T12:36:16.623Z",
+  "status": "OKAY",
+  "selectors": {
+    "player": "div.MuiGrid-root > div[data-mod='roster']",
+    "name": "h4",
+    "number": "h3",
+    "position": "p"
+  },
+  "knownPlayers": [
+    {
+      "name": "Jordan BARBALINARDO SAMPAIO",
+      "number": "2"
+    },
+    {
+      "name": "Paul MORTAS",
+      "number": "5"
+    },
+    {
+      "name": "Patrick MACEDO BATISTA",
+      "number": "7"
+    },
+    {
+      "name": "Marco DA SILVA GONÇALVES",
+      "number": "8"
+    },
+    {
+      "name": "Marco MAJOUGA",
+      "number": "9"
+    },
+    {
+      "name": "Alex LOPES MARTA",
+      "number": "11"
+    },
+    {
+      "name": "José Eduardo FRAGA CUNHA",
+      "number": "14"
+    },
+    {
+      "name": "Ricky DE SOUSA",
+      "number": "16"
+    },
+    {
+      "name": "Lewis LONG IV",
+      "number": "17"
+    },
+    {
+      "name": "Thierry DELGADO",
+      "number": "18"
+    },
+    {
+      "name": "Adrano Junior DE SOUSA FERRAZ",
+      "number": "20"
+    },
+    {
+      "name": "Sebestyén SZÁRI",
+      "number": "20"
+    },
+    {
+      "name": "Néphi KAMWANAY",
+      "number": "21"
+    },
+    {
+      "name": "André MATIAS DA SILVA",
+      "number": "21"
+    },
+    {
+      "name": "David MENDES MERCES",
+      "number": "22"
+    },
+    {
+      "name": "Thiago COSTA",
+      "number": "23"
+    },
+    {
+      "name": "Sami FETTAHI",
+      "number": "24"
+    },
+    {
+      "name": "Hugo LOUREIRO",
+      "number": "27"
+    },
+    {
+      "name": "Yoni ISERENTANT",
+      "number": "30"
+    },
+    {
+      "name": "Thiago Semedo Monteiro",
+      "number": "38"
+    },
+    {
+      "name": "Benjamin BOGMIS",
+      "number": "44"
+    },
+    {
+      "name": "José Francisco  MONTEIRO PETI",
+      "number": "45"
+    },
+    {
+      "name": "Jason José  FEDERSPIEL BARRETO",
+      "number": "68"
+    },
+    {
+      "name": "Francisco Da Silva Fernandes",
+      "number": "70"
+    },
+    {
+      "name": "Olav MOREIRA",
+      "number": "77"
+    },
+    {
+      "name": "Daniel FREITAS",
+      "number": "79"
+    },
+    {
+      "name": "Cehaib EL MOUTAWAKIL",
+      "number": "80"
+    },
+    {
+      "name": "Ricky DE PAIVA",
+      "number": "94"
+    },
+    {
+      "name": "Valter ANDRADE",
+      "number": "96"
+    },
+    {
+      "name": "Adam BOUZID"
+    },
+    {
+      "name": "Carlos CARVALHO"
+    },
+    {
+      "name": "Carlo DE BORGER"
+    },
+    {
+      "name": "Paulo ROCHA FURTADO"
+    },
+    {
+      "name": "Patrick OLIVEIRA CARVALHO"
+    },
+    {
+      "name": "Michael Lima De Sousa"
+    },
+    {
+      "name": "Sara Coelho Dos Santos"
+    },
+    {
+      "name": "Georges Menster"
+    }
+  ],
+  "newPlayers": [],
+  "departedPlayers": [],
+  "changedPlayers": []
+}
