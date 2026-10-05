@@ -4,7 +4,8 @@
     "private": true,
     "scripts": {
         "monitor": "playwright test monitoring",
-        "monitor:f91": "playwright test monitoring/clubs/f91-dudelange.spec.ts"
+        "monitor:squad": "playwright test monitoring --grep @SQUAD",
+        "monitor:lhere": "playwright test monitoring --grep @LHERE"
     },
     "devDependencies": {
         "@playwright/test": "^1.55.0",

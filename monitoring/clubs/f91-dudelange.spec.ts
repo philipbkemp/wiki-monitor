@@ -7,8 +7,8 @@ const dataFile = path.resolve(
   'docs/squads/f91-dudelange.json'
 );
 
-test.describe("F91 Dudelange",async()=>{
-    test('Squad', async ({ page }) => {
+test.describe("F91 Dudelange",{tag:"@Club"},async()=>{
+    test('Squad',{tag:"@SQUAD"}, async ({ page }) => {
         await checkSquad(dataFile,page);
     });
 });

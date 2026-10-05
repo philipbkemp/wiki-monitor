@@ -1,0 +1,179 @@
+{
+  "club": "Atert Bissen",
+  "url": "https://www.fcbissen.lu/seniors-1-271044v4",
+  "redirectUrl": "https://www.fcbissen.lu/seniors-1-271044v4/groups/14737/seasons/220",
+  "actualUrl": "https://www.fcbissen.lu/seniors-1-271044v4/groups/14737/seasons/220",
+  "lastChecked": "2026-10-05T12:03:32.360Z",
+  "status": "OKAY",
+  "selectors": {
+    "player": "a > [data-mod='roster']",
+    "name": "h4",
+    "number": "h3",
+    "position": "p"
+  },
+  "knownPlayers": [
+    {
+      "name": "David Alexandre IVANOV",
+      "position": "Goalkeeper",
+      "number": "1"
+    },
+    {
+      "name": "Raphael DIARRA",
+      "position": "Defensiv all-rounder",
+      "number": "2"
+    },
+    {
+      "name": "Louis MARASI",
+      "position": "Defense",
+      "number": "3"
+    },
+    {
+      "name": "Yohann MANONNE",
+      "position": "Defensiv all-rounder",
+      "number": "4"
+    },
+    {
+      "name": "Zakaria LOURIZ HALHOUL",
+      "position": "Central defender",
+      "number": "5"
+    },
+    {
+      "name": "Telmo CASTANHEIRA",
+      "position": "Center midfield",
+      "number": "6"
+    },
+    {
+      "name": "Rafael Enzo FERNANDES",
+      "position": "Midfield",
+      "number": "7"
+    },
+    {
+      "name": "Lucas CORREIA",
+      "position": "Offensive midfield",
+      "number": "9"
+    },
+    {
+      "name": "Adriel GUIMARAES SANTOS",
+      "position": "Center midfield",
+      "number": "10"
+    },
+    {
+      "name": "Joel RODRIGUES DA CRUZ",
+      "position": "Striker",
+      "number": "11"
+    },
+    {
+      "name": "Eric VEIGA",
+      "position": "Midfield",
+      "number": "18"
+    },
+    {
+      "name": "Brandon SOARES ROSA",
+      "position": "Center midfield",
+      "number": "19"
+    },
+    {
+      "name": "Enzo THALAMOT",
+      "position": "Defensive midfield",
+      "number": "20"
+    },
+    {
+      "name": "Khalid ABI RAMZI",
+      "position": "Offensive midfield",
+      "number": "21"
+    },
+    {
+      "name": "Oscar Vicente MENDES",
+      "position": "Center forward",
+      "number": "22"
+    },
+    {
+      "name": "Kenio TEIXEIRA CABRAL",
+      "position": "Defense",
+      "number": "27"
+    },
+    {
+      "name": "Roman FERBER",
+      "position": "Center forward",
+      "number": "30"
+    },
+    {
+      "name": "Diogo Miguel ZAMBUJO PIMENTEL",
+      "position": "Defensive midfield",
+      "number": "31"
+    },
+    {
+      "name": "Mamadi DJALO",
+      "position": "Striker",
+      "number": "35"
+    },
+    {
+      "name": "Toufik ZEGHDANE",
+      "position": "Defensiv all-rounder",
+      "number": "39"
+    },
+    {
+      "name": "Geordan DUPIRE",
+      "position": "Goalkeeper",
+      "number": "40"
+    },
+    {
+      "name": "Lenny ALMADA Correia",
+      "position": "Central defender",
+      "number": "41"
+    },
+    {
+      "name": "Miguel FERNANDES REBELO",
+      "position": "Center midfield",
+      "number": "45"
+    },
+    {
+      "name": "Seco Braima SANI",
+      "position": "Defensive midfield",
+      "number": "58"
+    },
+    {
+      "name": "Tiago RODRIGUES DA COSTA",
+      "position": "Midfield",
+      "number": "70"
+    },
+    {
+      "name": "Miguel ROQUE VAZ",
+      "position": "Striker",
+      "number": "73"
+    },
+    {
+      "name": "Hélio César LOPES DA COSTA",
+      "position": "Goalkeeper",
+      "number": "88"
+    },
+    {
+      "name": "Vitor PEREIRA",
+      "position": "Head Coach",
+      "number": "101"
+    },
+    {
+      "name": "Pedro GARCIA",
+      "position": "Assistant Coach",
+      "number": "102"
+    },
+    {
+      "name": "Paulo GOMES",
+      "position": "Assistant Coach",
+      "number": "103"
+    },
+    {
+      "name": "Vitor Bruno ALMEIDA GONCALVES",
+      "position": "Goalkeeper Coach",
+      "number": "104"
+    },
+    {
+      "name": "Vincent THALAMOT",
+      "position": "Technical Director",
+      "number": "105"
+    }
+  ],
+  "newPlayers": [],
+  "departedPlayers": [],
+  "changedPlayers": []
+}

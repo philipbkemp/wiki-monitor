@@ -4,10 +4,10 @@ import { checkSquad } from "../parsers/squad";
 
 const dataFile = path.resolve(
   process.cwd(),
-  'docs/squads/fc-residence-walferdange.json'
+  'docs/squads/fc-atert-bissen.json'
 );
 
-test.describe("FC Résidence Walferdange",{tag:"@Club"},async()=>{
+test.describe("FC Atert Bissen",{tag:"@Club"},async()=>{
     test('Squad',{tag:"@SQUAD"}, async ({ page }) => {
         await checkSquad(dataFile,page);
     });
