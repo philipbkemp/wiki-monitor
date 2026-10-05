@@ -2,9 +2,9 @@
   "club": "F91 Dudelange",
   "url": "https://www.f91.lu/kader-90630v4",
   "redirectUrl": "https://www.f91.lu/kader-90630v4/groups/50/seasons/220",
-  "actualUrl": "https://www.f91.lu/kader-90630v4",
-  "lastChecked": "2026-10-04T23:40:10.093Z",
-  "status": "MIGRATION",
+  "actualUrl": "https://www.f91.lu/kader-90630v4/groups/50/seasons/220",
+  "lastChecked": "2026-10-05T02:40:56.866Z",
+  "status": "OKAY",
   "selectors": {
     "player": "a > [data-mod='roster']",
     "name": "h4",
