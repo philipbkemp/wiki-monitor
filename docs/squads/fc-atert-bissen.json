@@ -148,24 +148,9 @@
       "number": "88"
     },
     {
-      "name": "Vitor PEREIRA",
+      "name": "Blessing LUMUENO",
       "position": "Head Coach",
-      "number": "101"
-    },
-    {
-      "name": "Pedro GARCIA",
-      "position": "Assistant Coach",
-      "number": "102"
-    },
-    {
-      "name": "Paulo GOMES",
-      "position": "Assistant Coach",
-      "number": "103"
-    },
-    {
-      "name": "Vitor Bruno ALMEIDA GONCALVES",
-      "position": "Goalkeeper Coach",
-      "number": "104"
+      "number": "100"
     },
     {
       "name": "Vincent THALAMOT",
@@ -173,34 +158,7 @@
       "number": "105"
     }
   ],
-  "newPlayers": [
-    {
-      "name": "Blessing LUMUENO",
-      "position": "Head Coach",
-      "number": "100"
-    }
-  ],
-  "departedPlayers": [
-    {
-      "name": "Vitor PEREIRA",
-      "position": "Head Coach",
-      "number": "101"
-    },
-    {
-      "name": "Pedro GARCIA",
-      "position": "Assistant Coach",
-      "number": "102"
-    },
-    {
-      "name": "Paulo GOMES",
-      "position": "Assistant Coach",
-      "number": "103"
-    },
-    {
-      "name": "Vitor Bruno ALMEIDA GONCALVES",
-      "position": "Goalkeeper Coach",
-      "number": "104"
-    }
-  ],
+  "newPlayers": [],
+  "departedPlayers": [],
   "changedPlayers": []
 }
