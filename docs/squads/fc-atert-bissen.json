@@ -3,8 +3,8 @@
   "url": "https://www.fcbissen.lu/seniors-1-271044v4",
   "redirectUrl": "https://www.fcbissen.lu/seniors-1-271044v4/groups/14737/seasons/220",
   "actualUrl": "https://www.fcbissen.lu/seniors-1-271044v4/groups/14737/seasons/220",
-  "lastChecked": "2026-10-20T21:59:08.284Z",
-  "status": "OKAY",
+  "lastChecked": "2026-11-16T03:21:18.344Z",
+  "status": "UPDATED",
   "selectors": {
     "player": "a > [data-mod='roster']",
     "name": "h4",
@@ -173,7 +173,34 @@
       "number": "105"
     }
   ],
-  "newPlayers": [],
-  "departedPlayers": [],
+  "newPlayers": [
+    {
+      "name": "Blessing LUMUENO",
+      "position": "Head Coach",
+      "number": "100"
+    }
+  ],
+  "departedPlayers": [
+    {
+      "name": "Vitor PEREIRA",
+      "position": "Head Coach",
+      "number": "101"
+    },
+    {
+      "name": "Pedro GARCIA",
+      "position": "Assistant Coach",
+      "number": "102"
+    },
+    {
+      "name": "Paulo GOMES",
+      "position": "Assistant Coach",
+      "number": "103"
+    },
+    {
+      "name": "Vitor Bruno ALMEIDA GONCALVES",
+      "position": "Goalkeeper Coach",
+      "number": "104"
+    }
+  ],
   "changedPlayers": []
 }
