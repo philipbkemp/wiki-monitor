@@ -3,8 +3,8 @@
   "url": "https://www.fcbissen.lu/seniors-1-271044v4",
   "redirectUrl": "https://www.fcbissen.lu/seniors-1-271044v4/groups/14737/seasons/220",
   "actualUrl": "https://www.fcbissen.lu/seniors-1-271044v4/groups/14737/seasons/220",
-  "lastChecked": "2026-11-16T03:21:18.344Z",
-  "status": "UPDATED",
+  "lastChecked": "2026-11-16T14:07:30.554Z",
+  "status": "OKAY",
   "selectors": {
     "player": "a > [data-mod='roster']",
     "name": "h4",
