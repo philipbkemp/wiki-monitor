@@ -156,15 +156,14 @@
       "name": "Vincent THALAMOT",
       "position": "Technical Director",
       "number": "105"
-    }
-  ],
-  "newPlayers": [
+    },
     {
       "name": "Geovanne DOS SANTOS MARTINS",
       "position": "Offensive midfield",
       "number": "47"
     }
   ],
+  "newPlayers": [],
   "departedPlayers": [],
   "changedPlayers": []
 }
